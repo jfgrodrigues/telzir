@@ -15,19 +15,22 @@ var faleMais11_18_60_80 = {
 							"comFaleMais":19.8,
 							"semFaleMais":72
 							};
-var faleMais12_18_60_80 = { "statusCode": 404, "message": "Não há tarifa cadastrada para origem: 012 / destino: 018" };
-var faleMais18_16_30_60 = { "statusCode": 404, "message": "Não há tarifa cadastrada para origem: 018 / destino: 016" };
-var faleMais11_17_40_50 = { "statusCode": 400, "message": "Plano inválido." };
-var faleMais11_17_30__1 = { "statusCode": 400, "message": "O valor do minuto deve ser positivo. O valor enviado (-1), portanto, é inválido" };
-var faleMaisSemDestino = { "statusCode": 400, "message": "É necessário enviar origem, destino, plano e minutos para fazer a consulta" };
-
-/*describe("exemplo-ut", function() {
-	describe("request", function() {
-		it('apenas true', function() {
-			assert.equal(true, true);
-		});
-	});
-});*/
+var faleMais12_18_60_80 = { 
+							"statusCode": 404, 
+							"message": "Não há tarifa cadastrada para origem: 012 / destino: 018" 
+							};
+var faleMais18_16_30_60 = { 
+							"statusCode": 404, "message": "Não há tarifa cadastrada para origem: 018 / destino: 016" 
+							};
+var faleMais11_17_40_50 = {
+							"statusCode": 400, "message": "Plano inválido."
+							};
+var faleMais11_17_30__1 = {
+							"statusCode": 400, "message": "O valor do minuto deve ser positivo. O valor enviado (-1), portanto, é inválido"
+							};
+var faleMaisSemDestino = { 
+							"statusCode": 400, "message": "É necessário enviar origem, destino, plano e minutos para fazer a consulta"
+							};
 
 it('requisicao origens', function(done) {
 	exemplo.reqisicaoOrigens(function(response) {
@@ -71,49 +74,49 @@ it('requisicao planos', function(done) {
 	});
 });
 
-it('req FaleMais_1', function(done) {
+it('requisicao FaleMais mintos dentro do plano', function(done) {
 	exemplo.requisicaoFaleMais1(function(response) {
 		assert.deepEqual(faleMais11_16_30_20, response);
 		done();
 	});
 });
 
-it('req FaleMais_2', function(done) {
+it('requisicao FaleMais mintos excedendo plano', function(done) {
 	exemplo.requisicaoFaleMais2(function(response) {
 		assert.deepEqual(faleMais11_18_60_80, response);
 		done();
 	});
 });
 
-it('req FaleMais_3', function(done) {
+it('requisicao FaleMais - erro - origem inexistente', function(done) {
 	exemplo.requisicaoFaleMais3(function(response) {
 		assert.deepEqual(faleMais12_18_60_80, response);
 		done();
 	});
 });
 
-it('req FaleMais_4', function(done) {
+it('requisicao FaleMais - erro - destino inexistente', function(done) {
 	exemplo.requisicaoFaleMais4(function(response) {
 		assert.deepEqual(faleMais18_16_30_60, response);
 		done();
 	});
 });
 
-it('req FaleMais_5', function(done) {
+it('requisicao FaleMais - erro - plano inexistente', function(done) {
 	exemplo.requisicaoFaleMais5(function(response) {
 		assert.deepEqual(faleMais11_17_40_50, response);
 		done();
 	});
 });
 
-it('req FaleMais_6', function(done) {
+it('requisicao FaleMais - erro - minutos negativos', function(done) {
 	exemplo.requisicaoFaleMais6(function(response) {
 		assert.deepEqual(faleMais11_17_30__1, response);
 		done();
 	});
 });
 
-it('req FaleMais_7', function(done) {
+it('requisicao FaleMais - erro - falta de parametro para a busca', function(done) {
 	exemplo.requisicaoFaleMais7(function(response) {
 		assert.deepEqual(faleMaisSemDestino, response);
 		done();
