@@ -57,19 +57,35 @@ Volte ao terminal onde instalou os pacotes de testes e digite o comando 'mocha'.
 mocha
 ```
 
-  √ requisicao origens (125ms)
-  √ requisicao destinos origem 011
-  √ requisicao destinos origem 016
-  √ requisicao destinos origem 017
-  √ requisicao destinos origem 018
-  √ requisicao planos
-  √ requisicao FaleMais mintos dentro do plano
-  √ requisicao FaleMais mintos excedendo plano
-  √ requisicao FaleMais - erro - origem inexistente
-  √ requisicao FaleMais - erro - destino inexistente
-  √ requisicao FaleMais - erro - plano inexistente
-  √ requisicao FaleMais - erro - minutos negativos
-  √ requisicao FaleMais - erro - falta de parametro para a busca
+√ requisicao origens (125ms)
+  
+√ requisicao destinos origem 011
+  
+√ requisicao destinos origem 016
 
-  13 passing (309ms)
+√ requisicao destinos origem 017
+  
+√ requisicao destinos origem 018
 
+√ requisicao planos
+
+√ requisicao FaleMais mintos dentro do plano
+
+√ requisicao FaleMais mintos excedendo plano
+
+√ requisicao FaleMais - erro - origem inexistente
+
+√ requisicao FaleMais - erro - destino inexistente
+
+√ requisicao FaleMais - erro - plano inexistente
+
+√ requisicao FaleMais - erro - minutos negativos
+
+√ requisicao FaleMais - erro - falta de parametro para a busca
+
+
+13 passing (309ms)
+
+### Front-end
+
+Para d=rodar o front-end, insira os arquivos da pasta front na pasta do servidor de exibição do serviço e digitar no browser 'localhost'.
