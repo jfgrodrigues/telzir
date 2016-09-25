@@ -1,0 +1,59 @@
+<html ng-app="telzir">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Consulta e comparação de custos de ligação com e sem o plano FaleMais">
+		<meta name="keywords" content="FaleMais, Telzir">
+
+		<title>Consulta Telzir - FaleMais</title>
+
+		<script src="libs/angular/angular.min.js"></script>
+		<script src="libs/angular/angular-locale_pt-br.js"></script>
+		<script src="js/telzir.js"></script>
+		<script src="js/cotrollers/telzirCtrl.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script src="libs/bootstrap/js/bootstrap.min.js"></script>
+		
+		<link href="libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
+	</head>
+	<body class="container" ng-controller="telzirCtrl">
+		<h1>Consulta FaleMais</h1>
+		<br /><p class="lead">Preencha os campos abaixo e compare os valores das ligações com ou sem algum dos planos FaleMais:</p>
+		<div class="row">
+			<div class="col-md-2 col-sm-4">
+				DDD de origem: <select class="form-control" ng-model="origem" ng-change="getDestinos(origem)" ng-options="origem.origem as origem.origem for origem in origens">
+				</select> 
+			</div>
+			<div class="col-md-2 col-sm-4">
+				DDD de destino: <select class="form-control" ng-model="destino" ng-options="destino.destino as destino.destino for destino in destinos">
+				</select>
+			</div>
+			<div class="col-md-2 col-sm-4">
+				Plano FaleMais: <select class="form-control" ng-model="plano" ng-options="plano.plano as plano.plano for plano in planos">
+				</select>
+			</div>
+			<div class="col-md-3 col-sm-6">
+				Minutos de ligação: <input type="number" class="form-control" id="minutos" placeholder="Quantidade de minutos da ligação" ng-model="minutos">
+			</div>
+			<div class="col-md-3 col-sm-6">
+				<br /><button class="btn btn-info btn-block" ng-click="consultaTarifacao(origem, destino, plano, minutos)" ng-disabled="origem===undefined || destino===undefined || plano===undefined || minutos===undefined"><span class="glyphicon glyphicon-phone"></span> Compare</button>
+			</div>
+		</div>
+		<br /><table class="table" ng-show="consulta">
+			<center><thead>
+				<tr>
+					<th class="success">Com FaleMais</th>
+					<th class="danger">Sem FaleMais</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="success">{{consulta.comFaleMais | currency}}</td>
+					<td class="danger">{{consulta.semFaleMais | currency}}</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="alert alert-danger" role="alert" ng-show="erroConsulta"><span class="glyphicon glyphicon-info-sign"></span> {{erroConsulta}}</div>
+	</body>
+</html>

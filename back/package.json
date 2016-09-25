@@ -1,0 +1,29 @@
+{
+  "name": "telzir",
+  "version": "1.0.0",
+  "description": "Resolução do desafio (show me the code) da Vizir. A 'Telzir' presica de uma página WEB para mostrar para os clientes as tarifas praticadas em ligações com e sem os planos 'FaleMais'.",
+  "homepage": "https://github.com/jfgrodrigues/telzir/",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jfgrodrigues/telzir.git"
+  },
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "bin": {
+    "telzir": "app.js"
+  },
+  "keywords": [
+    "Telzir",
+    "Test",
+    "Vizir",
+    "Show-me-the-code"
+  ],
+  "author": "Jean F. G. Rodrigues",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.14.0",
+    "mongodb": "^2.2.10"
+  }
+}

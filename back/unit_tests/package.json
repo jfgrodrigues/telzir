@@ -1,0 +1,19 @@
+{
+  "name": "teste_telzir",
+  "version": "1.0.0",
+  "description": "testes unitários Telzir",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "testes",
+    "unitários",
+    "telzir"
+  ],
+  "author": "Jean F. G. Rodrigues",
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "^3.0.2"
+  }
+}
