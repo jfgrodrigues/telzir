@@ -8,11 +8,27 @@ Serviço WEB de consulta da tarifa de ligações utilizando (ou não) algum dos 
 
 São pré-requisitos para instalar e rodar o serviço, ter no host instalado e rodando:
 
-1. NodeJS com npm (https://nodejs.org/en/). 
+1. NodeJS com npm (https://nodejs.org/en/);
 
-2. Ter  o monMongoDB (https://www.mongodb.com/download-center).
+2. MongoDB (https://www.mongodb.com/download-center);
 
-Com os pré-requisitos atendidos, baixe e instale os pacotes da hash_search.
+3. As collections 'planos' e 'tarifas' populadas.
+
+Para este último, abra um terminal e use os cmandos na sequência abaixo:
+
+```shell
+mongo
+use telzir
+
+var tarifas = [{ "origem": "011", "destino": "016", "tarifa": 1.90 }, { "origem": "016", "destino": "011", "tarifa": 2.90 }, { "origem": "011", "destino": "017", "tarifa": 1.70 }, { "origem": "017", "destino": "011", "tarifa": 2.70 }, { "origem": "011", "destino": "018", "tarifa": 0.90 }, { "origem": "018", "destino": "011", "tarifa": 1.90 }]
+
+var planos = [{ "plano" : 30 }, { "plano": 60 }, { "plano": 120 }]
+
+db.tarifas.insertMany(tarifas)
+db.planos.insertMany(planos)
+```
+
+Com os pré-requisitos atendidos, baixe e instale os pacotes da 'Telzir'.
 
 ### Instalação
 
@@ -56,7 +72,8 @@ Volte ao terminal onde instalou os pacotes de testes e digite o comando 'mocha'.
 ```shell
 mocha
 ```
-
+Resultado:
+```shell
 √ requisicao origens (125ms)
 √ requisicao destinos origem 011
 √ requisicao destinos origem 016
@@ -72,6 +89,7 @@ mocha
 √ requisicao FaleMais - erro - falta de parametro para a busca
 
 13 passing (309ms)
+```
 
 ### Front-end
 
