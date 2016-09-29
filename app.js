@@ -4,7 +4,8 @@ var MongoClient = require('mongodb').MongoClient
 	,assert = require('assert');
 var ObjectId = require('mongodb').ObjectID;
 	
-var port = 8080;
+//var port = 8080;
+const PORT = process.env.PORT || 8080;
 var hora = new Date();
 
 var url = 'mongodb://localhost:27017/telzir';
