@@ -4,7 +4,6 @@ var MongoClient = require('mongodb').MongoClient
 	,assert = require('assert');
 var ObjectId = require('mongodb').ObjectID;
 	
-//var port = 8080;
 const PORT = process.env.PORT || 8080;
 var hora = new Date();
 
@@ -200,6 +199,6 @@ app.get('/planos', function(req, res){
 	});
 });
 
-app.listen(port, function(){
-	console.log('Servidor rodando na porta '+port+' \nInicializado: '+hora);
+app.listen(PORT, function(){
+	console.log('Servidor rodando na porta '+PORT+' \nInicializado: '+hora);
 });
